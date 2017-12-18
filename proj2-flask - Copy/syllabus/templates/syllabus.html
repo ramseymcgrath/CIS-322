@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Course Schedule</title>
+  <link rel="stylesheet" type="text/css" href="static/css/syllabus.css"
+   media="screen"/> 
+  <link rel="stylesheet" type="text/css" href="static/css/syllabus-print.css"
+   media="print"/> 
+
+</head>
+
+<body>
+<h1>Schedule</h1>
+
+<table class="class-schedule">
+  {% for entry in session.schedule %}
+  {% if loop.index is divisibleby 2 %}
+  <tr class="even">
+  {% else %}
+  <tr class="odd">
+  {% endif %}	   
+    <td  {% if entry.current == "true" %} class="week_active" {% else %} class="week" {% endif%}>{{ entry.week }} {{ entry.week_date}}</td>
+    <td class="topic">{{ entry.topic }}</td>
+    <td class="project">{{ entry.project}}</td>
+  </tr>
+  {% endfor %}
+  
+
+
+
+</body> </html>

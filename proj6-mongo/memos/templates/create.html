@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> 
+    <head>
+        <title>Memos</title>
+
+        <!-- 'viewport' is used by bootstrap to respond to device size -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+        </script>
+
+        <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+        <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+        </script>
+
+        <!-- Our own style sheet -->
+        <link rel="stylesheet" href="/static/css/memos.css" />
+
+
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- Flashed messages before content -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+
+            <div id="entermemo">
+                <h1>Add memo here:</h1>
+                <br>
+                <form>
+                    <div class="row">
+                        <input type=date name="date" id="date" value="2017-01-01" />
+                        <input type=time name="time" id="time" value="00:00"    />
+                    </div>
+                    <br>
+                    <div class="row">
+                        <textarea name="memo" id="memo" rows="10" style="width: 35%;"></textarea>
+                    </div>
+                    <br>
+                    <button id="submit" class="float-left submit-button">Submit</button>
+                </form>
+                </div>
+            <script type="text/javascript">
+                var SCRIPT_ROOT = {{ request.script_root|tojson|safe }} ;
+                var ADD_MEMO = SCRIPT_ROOT + "/add_memo";
+
+                document.getElementById("submit").onclick = function () {
+                    console.log("Submit button clicked");
+                    var memo_text = document.getElementById('memo').value;
+                    var date = new Date($('#date').val() + " "
+                    +  $('#time').val()).toISOString();
+                    $.ajax({
+                    url: ADD_MEMO,
+                    data: {memo_text: memo_text, date: date},
+                    success: function () {
+                        console.log("Add: Got a response!");
+                        location.href = "/";
+                    }
+                    });
+                };
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html lang="en"> <head>
+<title>Dump request from form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Class css -->
+<link rel="stylesheet" type="text/css"
+href="/static/css/busy.css"
+/>
+
+<!-- Include Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+<body>
+<div class="container">
+
+<h1>Dumping the request object</h1>
+
+<!--
+  -- If there are any warnings or other messages from a prior action,
+  -- they appear above the rest of the content, just until the next 
+  -- action.
+  -->
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+<p>The request: </p>
+    {{ request }}
+
+
+<hr>
+<!-- hhmts start -->Last modified: Recently <!-- hhmts end -->
+</div>
+</body> </html>

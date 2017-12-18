@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+  My Meetings
+{% endblock %}
+{% block body %}
+  <h2>{{ self.title() }}</h2>
+  {% if g.user %}
+    <ul class="messages">
+      {% for meeting in events %}
+        <li>
+          <strong>{{ meeting.title }}</strong>
+          </small>{{ meeting.location }} &mdash; {{ meeting.time }}</small>
+        </li>
+      {% else %}
+        <li><em>There's no meetings.</em></li>
+      {% endfor %}
+      </ul>
+  {% endif %}
+{% endblock %}

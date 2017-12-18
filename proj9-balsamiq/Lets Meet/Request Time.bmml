@@ -1,0 +1,52 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="680" measuredH="678" mockupW="550" mockupH="567">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="130" y="111" w="550" h="567" measuredW="0" measuredH="0" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lets%20Meet%21%0Ahttp%3A//notaDatingSiteButKindaSoundsLikeIt.com/invitenewguy</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="382" y="193" w="288" h="29" measuredW="0" measuredH="0" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>%2C%2CLanding%26bm%3BLanding.bmml%26bm%3BLanding.bmml%26bm%3BLanding.bmml%2C</hrefs>
+        <text>Account%20Settings%2C%20Out%20Sick%2C%20Logout</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="203" y="255" w="409" h="-1" measuredW="0" measuredH="0" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Arrange%20a%20New%20Meeting%20with%3A%20USER2</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::DateChooser" x="301" y="311" w="197" h="-1" measuredW="0" measuredH="0" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20/%20%20/%20%20%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="312" y="576" w="107" h="33" measuredW="0" measuredH="0" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Send%20invite</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="203" y="313" w="98" h="-1" measuredW="0" measuredH="0" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Selected%20time</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="301" y="361" w="197" h="-1" measuredW="0" measuredH="0" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Meeting%20URL/Location</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="197" y="364" w="98" h="-1" measuredW="0" measuredH="0" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Where%20to%20meet</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextArea" x="234" y="404" w="265" h="140" measuredW="0" measuredH="0" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Personal%20Message</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

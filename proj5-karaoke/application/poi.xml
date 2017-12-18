@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<data>
+    <location name="Kabul">
+        <latitude>34.51666667</latitude>
+        <longitude>69.183333</longitude>
+    </location>
+    <location name="Minsk">
+        <latitude>53.9</latitude>
+        <longitude>27.566667</longitude>
+    </location>
+    <location name="Brussels">
+        <latitude>50.83333333</latitude>
+        <longitude>4.333333</longitude>
+    </location>
+    <location name="Brasilia">
+        <latitude>-15.78333333</latitude>
+        <longitude>-47.916667</longitude>
+    </location>
+    <location name="Ottawa">
+        <latitude>1</latitude>
+        <longitude>2008</longitude>
+    </location>
+</data>

@@ -1,0 +1,25 @@
+<!doctype html>
+<title>{% block title %}Welcome{% endblock %} | MeetMe</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<meta name="google-signin-scope" content="profile email calendar">
+<meta name="google-signin-client_id" content="955491201830-51e852pc5pp837pls46omgl5up3q02ae.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<div class="page">
+  <h1>MeetMe</h1>
+  <div class="navigation">
+  {% if g.user %}
+    <a href="{{ url_for('timeline') }}">my meetings</a> |
+    <a href="{{ url_for('make_new_meeting') }}">new meeting</a> |
+    <a href="{{ url_for('list_friends') }}">my friends</a> |
+    <a href="{{ url_for('logout') }}">sign out [{{ g.user.username }}]</a>
+  {% else %}
+    <a href="{{ url_for('register') }}">sign up</a>
+  {% endif %}
+  </div>
+  <div class="body">
+  {% block body %}{% endblock %}
+  </div>
+  <div class="footer">
+    MeetMe &mdash; A Flask Application
+  </div>
+</div>

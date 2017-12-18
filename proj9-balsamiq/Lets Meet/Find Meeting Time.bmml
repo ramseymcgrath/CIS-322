@@ -1,0 +1,58 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="754" measuredH="678" mockupW="639" mockupH="569">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="144" y="109" w="610" h="569" measuredW="0" measuredH="0" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lets%20Meet%21%0Ahttp%3A//notaDatingSiteButKindaSoundsLikeIt.com/findTime</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="481" y="187" w="-1" h="-1" measuredW="0" measuredH="0" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>%2C%2CLanding%26bm%3BLanding.bmml%26bm%3BLanding.bmml%26bm%3BLanding.bmml%2C</hrefs>
+        <text>Account%20Settings%2C%20Out%20Sick%2C%20Logout</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::List" x="208" y="316" w="232" h="252" measuredW="0" measuredH="0" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hasHeader>false</hasHeader>
+        <selectedIndex>0</selectedIndex>
+        <text>Item%20One%0AItem%20Two%0AItem%20Three</text>
+        <value>9</value>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="232" y="577" w="-1" h="-1" measuredW="0" measuredH="0" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Request%20Time%26bm%3BRequest%20Time.bmml%26bm%3BRequest%20Time.bmml%26bm%3BRequest%20Time.bmml</href>
+        <text>Suggest%20a%20time%20listed</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::DateChooser" x="516" y="353" w="156" h="-1" measuredW="0" measuredH="0" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20/%20%20/%20%20%20%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="516" y="394" w="-1" h="-1" measuredW="0" measuredH="0" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Request%20Time%26bm%3BRequest%20Time.bmml%26bm%3BRequest%20Time.bmml%26bm%3BRequest%20Time.bmml</href>
+        <text>Request%20a%20specific%20time</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="532" y="316" w="96" h="-1" measuredW="0" measuredH="0" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>No%20Free%20Times%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="208" y="289" w="-1" h="-1" measuredW="0" measuredH="0" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mututally%20Free%20Times</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Title" x="115" y="232" w="584" h="-1" measuredW="0" measuredH="0" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>28</size>
+        <text>Arrange%20a%20Meeting%20with%3A%20USER2</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

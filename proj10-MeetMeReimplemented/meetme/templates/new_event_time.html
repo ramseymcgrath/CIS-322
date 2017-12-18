@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block title %}
+  New Event
+{% endblock %}
+{% block body %}
+  <h2>{{ self.title() }}</h2>
+  {% if g.user %}
+  <form>
+    <strong>Meeting Info:</strong>
+    Enter your meeting name:
+    <input name="event_title" type="text">
+    <br>
+    Enter your meeting location:
+    <input name="event_location" type="text">
+    <br>
+    Enter your meeting description:
+    <input name="event_description" type="text">
+    <br>
+    <br>
+
+    <strong>Your open times:</strong>
+    <ul>
+      {% for time_block in freetimes %}
+        <li>
+          Start - {% time_block.start %}
+          End - {% time_block.end %}
+          <input name="meeting_time" type="submit" formmethod="post" value ="{% time_block.start %},{% time_block.end %}">Meet</input>
+        </li>
+      {% else %}
+        <li><em>There's no time!</em></li>
+      {% endfor %}
+      </ul>
+    </form>
+  {% endif %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+{% endblock %}

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html lang="en"> <head>
+<title>Appointments</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Class css -->
+<link rel="stylesheet" type="text/css"
+    href="/static/css/busy.css"
+/>
+<!-- Include Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+ 
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+</head>
+
+<body>
+<div class="container">
+
+<h1>Free times</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<h2>Date range</h2>
+  <form action="/setrange" method="post">
+  <input type="text" name="daterange" size="12"
+    {% if session.daterange is defined %}
+         value="{{session.daterange}}"
+    {% endif %}
+     class="pull-down"
+     style="background: #fff; cursor: pointer; padding: 5px 10px;
+     border: 1px solid #ccc; width: 12em" >
+  <script type="text/javascript">
+  $(function() {
+  $('input[name="daterange"]').daterangepicker(
+    {    ranges: {
+           'Today': [moment(), moment()],
+           'Tomorrow':[moment().add(1, 'days'),
+                       moment().add(1, 'days')], 
+           'This week':[moment(), moment().endOf('week')],
+           'Next week':[moment().add(7, 'days').startOf('week'),
+                        moment().add(7, 'days').endOf('week')],
+           'This month':[moment(), moment().endOf('month')],
+           'Within two weeks':[moment(),moment().add(15, 'days')]
+        }}
+       );
+    });
+  </script>
+
+  <br /><input type="submit" value="Choose" />
+  </form>
+
+    {% if g.calendars is defined %}
+    <div class="row">
+      <div class="col-md-12">
+        {% with blocks = g.desired_blocks %}
+        <h3> Free time blocks: </h3>
+        {% if blocks|length == 2 %}
+          <p><i>You have no other appointments</i></p>
+        {% else %}
+          {% for block in blocks %}
+          <li>
+            <p>{{ block[1] }}</p>
+          </li>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      </div>
+    </div>
+    {% else %}
+    <div class="row">
+      <h3> No calendars are available </h3>
+    </div>
+    {% endif %}
+  </div>  <!-- container (for bootstrap) -->
+  </body> 
+</html>

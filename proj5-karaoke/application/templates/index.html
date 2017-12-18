@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Where is the Karaoke</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"/>
+	<link rel="stylesheet" href="static/css/styles.css"/>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+	<script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=d1yDCezKyhnXaHQnqtQ51DHH6iPQJVJ2"></script>
+	<script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-geocoding.js?key=d1yDCezKyhnXaHQnqtQ51DHH6iPQJVJ2"></script>
+
+	<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+	<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous">
+	</script>
+	<script src="http://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=d1yDCezKyhnXaHQnqtQ51DHH6iPQJVJ2"></script>
+	<script src="http://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=d1yDCezKyhnXaHQnqtQ51DHH6iPQJVJ2"></script>
+
+	<title>Project 5: Maps</title>
+</head>
+
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 text-center">
+			<h1>My Map!</h1>
+		</div>
+	</div>
+	<div class="row">
+		<button type="button" id="find">Find Me</button>
+		<p>Or click the map to view an address</p>
+	</div>
+	<div class="row">
+		<div id="map"></div>
+	</div>
+</div>
+</body>
+<script> 
+	var mymap = L.map('map', {center: [44.05, -123.08], layers: MQ.mapLayer()});
+	var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+	});
+	mymap.addLayer(layer);
+
+	function map_init() {
+		$.getJSON("/_capitols", function(data){
+			capitols = data.result;
+			$.each(capitols, function( i, value ) {
+				var lon = value[0];
+				var lat = value[1];
+				var name = value[2].name;		
+				//var markerLocation = new L.LatLng(lat, lon);
+				var marker = L.marker([lon,lat]);
+				marker.addTo(mymap).bindPopup(name);
+			});
+			mymap.fitWorld();
+		});
+	}
+
+	var popup = L.popup(),
+  		geocode,
+  		mymap;
+
+	function onMapClick(e) {
+		popup.setLatLng(e.latlng).openOn(mymap);
+  		geocode.reverse(e.latlng);
+	}
+
+	mymap.on('click', onMapClick);
+
+	geocode = MQ.geocode().on('success', function(e) {
+		popup.setContent(geocode.describeLocation(e.result.best));
+	});
+
+	function locateUser() {
+		mymap.locate({setView : true});
+	}
+
+	$('#find').on('click', function() {
+		locateUser();
+	});
+	
+	$(function() {
+		map_init();
+	});
+</script>
+</html>

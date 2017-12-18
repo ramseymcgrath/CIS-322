@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> 
+  <head>
+    <title>Memos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+
+    <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"/>
+    <!-- Our own style sheet -->
+    <link rel="stylesheet" href="/static/css/memos.css" />
+  </head>
+  <body>
+    <div class="container">
+
+    <!-- Flashed messages before content -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <button id="create" class="float-left submit-button" >Create Memo</button>
+
+    <script type="text/javascript">
+        document.getElementById("create").onclick = function () {
+            location.href = "/create";
+        };
+    </script>
+
+
+    <h1>Memos</h1>
+
+    {% if g.memos %}
+        {% for memo in g.memos %}
+      <div class="memo">
+      <div class="row">
+      <div class="col-md-2">
+        {{ memo.date | humanize }}
+      </div>
+      <div class="col-md-10">
+        {{ memo.text }}
+      </div>
+      <div class="delete">
+        <button id="delete_button" value="{{ memo.token }}" onclick="delete_memo(this.value)">Delete</button>
+      </div> <!-- delete -->
+      </div> <!-- row -->
+      </div> <!-- memo -->
+      {% endfor %}
+    {% else %}
+      <p>0 memos found </p>  
+    {% endif %}
+
+    <script type="text/javascript">
+      var SCRIPT_ROOT = {{ request.script_root|tojson|safe }} ;
+      var DEL_MEMO = SCRIPT_ROOT + "/del_memo";
+      function delete_memo(value) {
+        console.log("Delete button clicked");
+        var token = value;
+        console.log(token);
+        $.ajax({
+          url: DEL_MEMO,
+          data: {token: token},
+          success: function () {
+            console.log("Add: Got a response!");
+            location.href = "/";
+          }
+        });
+      };
+    </script>
+    </div> <!-- container -->
+  </body>
+</html>

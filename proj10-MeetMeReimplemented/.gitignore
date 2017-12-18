@@ -1,0 +1,5 @@
+.eggs/
+.vscode/.ropeproject/config.py
+.vscode/.ropeproject/objectdb
+meetme/client_secret.json
+meetme/__pycache__/calendar_helper.cpython-36.pyc

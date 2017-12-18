@@ -1,0 +1,10 @@
+arrow
+Flask
+httplib2
+werkzeug
+requests
+pendulum
+apiclient
+flask_oauth
+oauth2client
+google-api-python-client

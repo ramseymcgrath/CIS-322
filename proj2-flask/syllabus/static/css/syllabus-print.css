@@ -1,0 +1,46 @@
+/*
+ * A simple style sheet for course schedules (print version)   
+ */
+
+ body {
+	background-color: rgb(255, 255, 255); 
+	color: #444;
+	font: normal 85% "Lucida Sans Unicode",sans-serif;
+	margin: 0;
+}
+
+
+table .class-schedule {
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    padding: 3px;
+}
+
+tr.odd {
+    /* A little darker */
+    background-color: rgb(255, 255, 255);
+}
+
+tr.even {
+    /* A little lighter */ 
+    background-color: rgb(255, 255, 255);
+}
+
+.class-schedule .week {
+    font-weight: bolder;
+    font-size: 150%; 
+    text-align: center; 
+}
+
+.class-schedule .topic {
+    padding-left: 3ex;
+    padding-right: 3ex;
+}
+
+.class-schedule .project {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: black; 
+    padding-left: 2ex;
+    font-style: italic;
+}

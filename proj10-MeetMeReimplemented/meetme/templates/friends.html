@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+  My Friends
+{% endblock %}
+{% block body %}
+  <h2>{{ self.title() }}</h2>
+  {% if g.user %}
+    {% if request.endpoint == 'my_friends' %}
+      <div class="friendstatus">
+      <ul>
+        {% for friend in friends %}
+            <li>
+                {%friend.username %} -  <input name="new_meeting_with" type="submit" formmethod="post" value ="{%friend.username %}">Setup meeting?</input> - <input name="unfriend" type="submit" formmethod="post" value ="{%friend.username %}">Unfriend?</input>
+            </li> 
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endblock %}

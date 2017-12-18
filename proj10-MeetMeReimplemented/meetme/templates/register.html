@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}
+  Register
+{% endblock %}
+{% block body %}
+  <h2>{{ self.title() }}</h2>
+  {% if g.user %}
+      <form method="post">
+        We only need a username: <input type=text name="username"/></br>
+        <input type="submit">Submit</input>
+      </form>
+    {% endif %}
+  {% endif %}
+{% endblock %}

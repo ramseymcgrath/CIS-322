@@ -1,0 +1,60 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="674" measuredH="700" mockupW="610" mockupH="569">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="64" y="131" w="610" h="569" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lets%20Meet%21%0Ahttp%3A//notaDatingSiteButKindaSoundsLikeIt.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="459" y="228" w="102" h="-1" measuredW="76" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Username</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="306" y="417" w="102" h="-1" measuredW="75" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>MeetCode</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="166" y="419" w="124" h="-1" measuredW="118" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Have%20a%20MeetCode%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="439" y="417" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>New%20meeting%20user%26bm%3BNew%20meeting%20user.bmml%26bm%3BNew%20meeting%20user.bmml%26bm%3BNew%20meeting%20user.bmml</href>
+        <text>Meet%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Title" x="106" y="297" w="-1" h="-1" measuredW="485" measuredH="45" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lets%20Meet%21%20%28Professionally%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="306" y="484" w="102" h="-1" measuredW="46" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Email</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="151" y="487" w="139" h="-1" measuredW="139" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Sign%20up%20for%20Lets%20Meet%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="439" y="484" w="-1" h="-1" measuredW="73" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>New%20user%26bm%3BNew%20user.bmml%26bm%3BNew%20user.bmml%26bm%3BNew%20user.bmml</href>
+        <menuIcon>false</menuIcon>
+        <text>Sign%20up%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Button" x="577" y="228" w="-1" h="-1" measuredW="56" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Post-Login%26bm%3BPost-Login.bmml%26bm%3BPost-Login.bmml%26bm%3BPost-Login.bmml</href>
+        <text>Login</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

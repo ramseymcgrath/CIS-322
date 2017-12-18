@@ -1,0 +1,3 @@
+graft meetme/templates
+graft meetme/static
+include meetme/schema.sql

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}
+  New Event
+{% endblock %}
+{% block body %}
+  <h2>{{ self.title() }}</h2>
+  {% if g.user %}
+  <h3>Invite people to the meeting?</h3>
+  <form>
+      <input list="invites">
+      <datalist id="invites">
+        {% for friend in friends %}
+          <option value="friend">
+        {% endfor %}
+      </datalist>
+      <input type="submit">
+  </form>
+  {% endif %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+{% endblock %}
